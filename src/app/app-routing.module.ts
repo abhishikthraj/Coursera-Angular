@@ -9,6 +9,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'menu', component: MenuComponent},
+  {path: 'contactus', component: ContactComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
