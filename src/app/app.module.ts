@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
+import { MatSliderModule } from "@angular/material/slider";
 
 import { AppComponent } from './app.component';
 
@@ -64,6 +65,7 @@ import { LoginComponent } from './login/login.component';
     MatCheckboxModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatSliderModule,
     MatProgressSpinnerModule
   ],
   providers: [
