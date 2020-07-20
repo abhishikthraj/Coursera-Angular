@@ -46,9 +46,17 @@
               <mat-list-item *ngFor="let comment of dish.comments">
                 <p matLine>{{comment.comment}}</p>
                 <p matLine>{{comment.rating}} Stars</p>
-                <p matLine>-- {{comment.author}} {{comment.date | date}}</p>
+                <p matLine>
+                  <span>-- {{comment.author}} {{comment.date | date}}</span>
+                </p>
               </mat-list-item>
-              
+              <mat-list-item *ngIf="commentForm.valid">
+                <p matLine>{{commentForm.get('comment').value}}</p>
+                <p matLine>{{commentForm.get('rating').value}} Stars</p>
+                <p matLine>
+                  <span>-- {{commentForm.get('author').value}}</span>
+                </p>
+              </mat-list-item>              
             </mat-list>
             <form novalidate [formGroup]="commentForm" #cform="ngForm" (ngSubmit)="onSubmit()">
               <p>
@@ -74,11 +82,11 @@
     </mat-card>
   </div>
 
-  <div fxFlex [hidden]="dish || errMsg">
+  <div fxFlex [hidden]="dish || errMess">
     <mat-spinner></mat-spinner> <h4>Loading... Please Wait</h4> 
   </div>
-  <div fxFlex *ngIf="errMsg">
+  <div fxFlex *ngIf="errMess">
     <h2>Error</h2>
-    <h4>{{errMsg}}</h4>
+    <h4>{{errMess}}</h4>
   </div>
 </div>

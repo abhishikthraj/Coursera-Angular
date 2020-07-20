@@ -10,15 +10,15 @@ export class ProcessHTTPMsgService {
   constructor() { }
 
   public handleError(error: HttpErrorResponse | any) {
-    let errMsg: string;
+    let errMess: string;
 
     if(error.error instanceof ErrorEvent) {
-      errMsg = error.error.message;
+      errMess = error.error.message;
     }
     else {
-      errMsg = `${error.status} - ${error.statusText || ''} ${error.error}`;
+      errMess = `${error.status} - ${error.statusText || ''} ${error.error}`;
     }
 
-    return throwError(errMsg)
+    return throwError(errMess)
   }
 }
